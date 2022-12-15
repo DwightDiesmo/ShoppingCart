@@ -97,7 +97,7 @@ const Products = (props) => {
       data: [],
     }
   );
-  console.log(`Rendering Products ${JSON.stringify(data)}`);
+  console.log(`Rendering Products Here ${JSON.stringify(data)}`);
   // Fetch Data
   const addToCart = (e) => {
     let name = e.target.name;
@@ -178,11 +178,11 @@ const Products = (props) => {
   // TODO: implement the restockProducts function
   const restockProducts = (url) => {
     doFetch(url);
-    let newItems = data.map((item) => {
+    let restockData = data.map((item) => {
       let {name, country, cost, instock} = item;
       return {name, country, cost, instock};
     });
-    setItems([...items, ...newItems]);
+    setItems([...restockData]);
   };
 
   return (
